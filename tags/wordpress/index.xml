@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress on Jeff</title>
+    <link>http://blog.dadajun.com/tags/wordpress/</link>
+    <description>Recent content in Wordpress on Jeff</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.dadajun.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>wordpress xmlrpc</title>
+      <link>http://blog.dadajun.com/2/101/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.dadajun.com/2/101/</guid>
+      <description>&lt;p&gt;Wordpress xmlrpc 实际上也是用了IXR 类库。wp_xmlrpc_server 继承了IXR_Server。 业务逻辑基本上在 wp_xmlrpc_server 上。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+//简单远程发布文章例子
+include &#39;IXR_Library.php&#39;;
+
+$url = &#39;http://www.wp.dev/xmlrpc.php&#39;;
+$blog_id = 1;
+$username = &#39;admin&#39;;
+$password = &#39;admin&#39;;
+
+
+$data = array(
+    &#39;post_type&#39; =&amp;gt; &#39;post&#39;,
+    &#39;post_content&#39; =&amp;gt; &#39;hello, world&#39;,
+    &#39;post_title&#39; =&amp;gt; &#39;hello!!&#39;
+);
+
+$params = array($blog_id, $username, $password, $data);
+
+
+$client = new IXR_Client($url);
+
+$client-&amp;gt;query(&#39;wp.newPost&#39;, $params);
+//$client-&amp;gt;query(&#39;demo.sayHello&#39;);
+$r = $client-&amp;gt;getResponse();
+
+print_r($r);
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>wordpress 错误日志开启</title>
+      <link>http://blog.dadajun.com/1/100/</link>
+      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.dadajun.com/1/100/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;
+&amp;lt;?php
+
+define(&#39;WP_DEBUG&#39;, &#39;true&#39;);
+define(&#39;WP_DEBUG_DISPLAY&#39;, false);
+define(&#39;WP_DEBUG_LOG&#39;, &#39;true&#39;);
+
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

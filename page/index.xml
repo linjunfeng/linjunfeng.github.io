@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Jeff</title>
+    <link>http://blog.dadajun.com/page/</link>
+    <description>Recent content in Pages on Jeff</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.dadajun.com/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About</title>
+      <link>http://blog.dadajun.com/page/about/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.dadajun.com/page/about/</guid>
+      <description>
+
+&lt;h2 id=&#34;about-me:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;About me&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
