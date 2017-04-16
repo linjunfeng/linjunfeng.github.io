@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>wordpress 错误日志开启</title>
+        <title>Php curl 设置 Proxy</title>
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.15" />
@@ -54,20 +54,49 @@
 <div class="container">
     <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
         <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">wordpress 错误日志开启</h1>
+    <h1 class="post-title" itemprop="name headline">Php curl 设置 Proxy</h1>
     
 </header>
 
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <pre><code>
-&lt;?php
+    <p>业务需要， 经常要去google 采集一些图片。 同一个ip经常被封。 所以配置百来个代理ip用来随机。</p>
 
-define('WP_DEBUG', true);
-define('WP_DEBUG_DISPLAY', false);
-define('WP_DEBUG_LOG', true);
+<pre><code>&lt;?php
 
+//随机一个代理
+function get_proxy_info($filename) {
+    $ips = file($filename);
+
+    shuffle($ips);
+    $proxy = array_pop($ips);
+
+    return explode(':', $proxy, 3);
+}
+
+$url = 'http://ipinfo.io/';
+$proxy = get_proxy_info('ip.txt');
+list($ip, $port, $userpwd,) = $proxy;
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+curl_setopt($ch, CURLOPT_PROXYAUTH, CURLAUTH_BASIC);
+curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_HTTP);
+curl_setopt($ch, CURLOPT_PROXY, $ip);
+curl_setopt($ch, CURLOPT_PROXYPORT, $port);
+curl_setopt($ch, CURLOPT_PROXYUSERPWD, trim($userpwd));
+
+$result = curl_exec($ch);
+curl_close($ch);
+
+echo $result;
 
 </code></pre>
 
@@ -78,27 +107,27 @@ define('WP_DEBUG_LOG', true);
         <p class="post-tags">
             <span>Tagged:</span>
             
-                 <a href="/tags/wordpress/">wordpress</a>
-            
                  <a href="/tags/php/">php</a>
+            
+                 <a href="/tags/curl/">curl</a>
             
         </p>
     
 
     <div class="share">
-        <a class="icon-twitter" href="http://twitter.com/share?text=wordpress%20%e9%94%99%e8%af%af%e6%97%a5%e5%bf%97%e5%bc%80%e5%90%af&url=http%3a%2f%2fblog.dadajun.com%2f1%2f100%2f"
+        <a class="icon-twitter" href="http://twitter.com/share?text=Php%20curl%20%e8%ae%be%e7%bd%ae%20Proxy&url=http%3a%2f%2fblog.dadajun.com%2f4%2f102%2f"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
             <i class="fa fa-twitter"></i>
             <span class="hidden">Twitter</span>
         </a>
 
-        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.dadajun.com%2f1%2f100%2f"
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.dadajun.com%2f4%2f102%2f"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
             <i class="fa fa-facebook"></i>
             <span class="hidden">Facebook</span>
         </a>
 
-        <a class="icon-google-plus" href="https://plus.google.com/share?url=http%3a%2f%2fblog.dadajun.com%2f1%2f100%2f"
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=http%3a%2f%2fblog.dadajun.com%2f4%2f102%2f"
            onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
            <i class="fa fa-google-plus"></i>
             <span class="hidden">Google+</span>

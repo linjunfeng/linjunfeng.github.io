@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Posts</title>
+        <title>Linux 常用信号</title>
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.15" />
@@ -51,95 +51,61 @@
             <div id="container">
 
 
-<div id="post-index" class="container">
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Linux 常用信号</h1>
     
-    <header class="post-header">
-        <h1 class="post-title"></h1>
-        <p></p>
-    </header>
+</header>
 
+        <div class="post-content clearfix" itemprop="articleBody">
+    
 
-    <ol class="post-list">
-        
-        
-            <li class="post-stub">
-    <a href="http://blog.dadajun.com/4/102/">
-        <h4 class="post-stub-title">Php curl 设置 Proxy</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="http://blog.dadajun.com/2/101/">
-        <h4 class="post-stub-title">wordpress xmlrpc</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="http://blog.dadajun.com/1/100/">
-        <h4 class="post-stub-title">wordpress 错误日志开启</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="http://blog.dadajun.com/3/98/">
-        <h4 class="post-stub-title">更简单的多维数组转码方式</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="http://blog.dadajun.com/1/99/">
-        <h4 class="post-stub-title">Linux服务器批量添加ip</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="http://blog.dadajun.com/4/77/">
-        <h4 class="post-stub-title">去除文件bom头</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="http://blog.dadajun.com/2/15/">
-        <h4 class="post-stub-title">Linux 常用信号</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="http://blog.dadajun.com/4/18/">
-        <h4 class="post-stub-title">Linux 冷门但是很酷的命令</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="http://blog.dadajun.com/2/vim/">
-        <h4 class="post-stub-title">vim 常用快捷键</h4>
-        
-        
-    </a>
-</li>
-        
-    </ol>
+    <pre><code># 查看信号列表
+kill -l
 
-    <div class="post-navigation">
-        
+### 经常用到的信号
+SIGTERM == 15 == kill pid  #进程终止（默认信号）  
+SIGINT == 2 == Ctrl-C # 键盘产生的中断  
+SIGKILL == 9 == kill -9 pid #强制进程终止  
 
+</code></pre>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+                 <a href="/tags/linux/">linux</a>
+            
+        </p>
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=Linux%20%e5%b8%b8%e7%94%a8%e4%bf%a1%e5%8f%b7&url=http%3a%2f%2fblog.dadajun.com%2f2%2f15%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.dadajun.com%2f2%2f15%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=http%3a%2f%2fblog.dadajun.com%2f2%2f15%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
     </div>
+</footer>
+
+        
+    </article>
 </div>
 
             </div>
@@ -161,3 +127,4 @@
         <script src="http://blog.dadajun.com/js/scripts.js"></script>
     </body>
 </html>
+

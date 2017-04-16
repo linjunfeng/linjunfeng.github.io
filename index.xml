@@ -6,8 +6,55 @@
     <description>Recent content on Jeff</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Apr 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.dadajun.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Php curl 设置 Proxy</title>
+      <link>http://blog.dadajun.com/4/102/</link>
+      <pubDate>Thu, 13 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.dadajun.com/4/102/</guid>
+      <description>&lt;p&gt;业务需要， 经常要去google 采集一些图片。 同一个ip经常被封。 所以配置百来个代理ip用来随机。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+
+//随机一个代理
+function get_proxy_info($filename) {
+    $ips = file($filename);
+
+    shuffle($ips);
+    $proxy = array_pop($ips);
+
+    return explode(&#39;:&#39;, $proxy, 3);
+}
+
+$url = &#39;http://ipinfo.io/&#39;;
+$proxy = get_proxy_info(&#39;ip.txt&#39;);
+list($ip, $port, $userpwd,) = $proxy;
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+curl_setopt($ch, CURLOPT_PROXYAUTH, CURLAUTH_BASIC);
+curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_HTTP);
+curl_setopt($ch, CURLOPT_PROXY, $ip);
+curl_setopt($ch, CURLOPT_PROXYPORT, $port);
+curl_setopt($ch, CURLOPT_PROXYUSERPWD, trim($userpwd));
+
+$result = curl_exec($ch);
+curl_close($ch);
+
+echo $result;
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>About</title>
@@ -69,9 +116,9 @@ print_r($r);
       <description>&lt;pre&gt;&lt;code&gt;
 &amp;lt;?php
 
-define(&#39;WP_DEBUG&#39;, &#39;true&#39;);
+define(&#39;WP_DEBUG&#39;, true);
 define(&#39;WP_DEBUG_DISPLAY&#39;, false);
-define(&#39;WP_DEBUG_LOG&#39;, &#39;true&#39;);
+define(&#39;WP_DEBUG_LOG&#39;, true);
 
 
 &lt;/code&gt;&lt;/pre&gt;
@@ -151,6 +198,39 @@ grep -r -I -l $&#39;^\xEF\xBB\xBF&#39; ./
 
 #去除bom
 find . -type f -exec sed -i &#39;s/\xEF\xBB\xBF//&#39; {} \;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux 常用信号</title>
+      <link>http://blog.dadajun.com/2/15/</link>
+      <pubDate>Tue, 10 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.dadajun.com/2/15/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;# 查看信号列表
+kill -l
+
+### 经常用到的信号
+SIGTERM == 15 == kill pid  #进程终止（默认信号）  
+SIGINT == 2 == Ctrl-C # 键盘产生的中断  
+SIGKILL == 9 == kill -9 pid #强制进程终止  
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux 冷门但是很酷的命令</title>
+      <link>http://blog.dadajun.com/4/18/</link>
+      <pubDate>Thu, 15 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.dadajun.com/4/18/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;alt + . 获取上一条命令的最后一个参数
+alt + 退格 删除最后一个单词
+Ctrl + R 搜索命令历史
+!!执行上一条命令 。 最经常就是用来 sudo !!
+
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
