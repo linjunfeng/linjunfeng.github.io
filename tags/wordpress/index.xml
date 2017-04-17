@@ -6,8 +6,48 @@
     <description>Recent content in Wordpress on Jeff</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Apr 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.dadajun.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>WooCommerce 设置每页产品数量</title>
+      <link>http://blog.dadajun.com/1/103/</link>
+      <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.dadajun.com/1/103/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+
+// Display 12 products per page.
+add_filter( &#39;loop_shop_per_page&#39;, function($cols){
+    
+    return 12;
+}, 20 );
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Wordpress 添加和移除 css, js</title>
+      <link>http://blog.dadajun.com/1/104/</link>
+      <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.dadajun.com/1/104/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+
+add_action(&#39;wp_enqueue_scripts&#39;, function () {
+    //remove
+    wp_deregister_style(&#39;woocommerce-general&#39;);
+    wp_dequeue_script(&#39;wc-cart&#39;);
+
+    //add
+    wp_enqueue_style(&#39;custom-css&#39;,  get_template_directory_uri(). &#39;/css/custom.css&#39;);
+    wp_enqueue_script(&#39;custom-js&#39;, get_template_directory_uri() . &#39;/js/custom.js&#39;);
+
+}, 99);
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>wordpress xmlrpc</title>
