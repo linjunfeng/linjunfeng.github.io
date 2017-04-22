@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shell on Jeff</title>
-    <link>http://blog.dadajun.com/tags/shell/</link>
+    <link>/tags/shell/</link>
     <description>Recent content in Shell on Jeff</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Mar 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.dadajun.com/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Linux服务器批量添加ip</title>
-      <link>http://blog.dadajun.com/1/99/</link>
+      <link>/1/99/</link>
       <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/1/99/</guid>
+      <guid>/1/99/</guid>
       <description>&lt;p&gt;由于业务需要， 需要在一台服务器添加100多个ip。简单写了一个shell。然后把它加到rc.local。这样机器重启也可以生效。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;
@@ -41,10 +41,10 @@ done
     
     <item>
       <title>去除文件bom头</title>
-      <link>http://blog.dadajun.com/4/77/</link>
+      <link>/4/77/</link>
       <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/4/77/</guid>
+      <guid>/4/77/</guid>
       <description>&lt;pre&gt;&lt;code&gt;#查找bom头文件
 grep -r -I -l $&#39;^\xEF\xBB\xBF&#39; ./
 

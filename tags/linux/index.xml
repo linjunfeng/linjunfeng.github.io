@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Jeff</title>
-    <link>http://blog.dadajun.com/tags/linux/</link>
+    <link>/tags/linux/</link>
     <description>Recent content in Linux on Jeff</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 10 Jun 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.dadajun.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Linux 常用信号</title>
-      <link>http://blog.dadajun.com/2/15/</link>
+      <link>/2/15/</link>
       <pubDate>Tue, 10 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/2/15/</guid>
+      <guid>/2/15/</guid>
       <description>&lt;pre&gt;&lt;code&gt;# 查看信号列表
 kill -l
 
@@ -29,10 +29,10 @@ SIGKILL == 9 == kill -9 pid #强制进程终止
     
     <item>
       <title>Linux 冷门但是很酷的命令</title>
-      <link>http://blog.dadajun.com/4/18/</link>
+      <link>/4/18/</link>
       <pubDate>Thu, 15 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/4/18/</guid>
+      <guid>/4/18/</guid>
       <description>&lt;pre&gt;&lt;code&gt;alt + . 获取上一条命令的最后一个参数
 alt + 退格 删除最后一个单词
 Ctrl + R 搜索命令历史

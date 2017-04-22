@@ -2,19 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Php on Jeff</title>
-    <link>http://blog.dadajun.com/tags/php/</link>
+    <link>/tags/php/</link>
     <description>Recent content in Php on Jeff</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Apr 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.dadajun.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>DirectAdmin 升级php 版本</title>
+      <link>/6/105/</link>
+      <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/6/105/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;
+
+cd /usr/local/directadmin/custombuild &amp;amp;&amp;amp; ./build set php5_ver 5.5 &amp;amp;&amp;amp; ./build update &amp;amp;&amp;amp; ./build php n
+
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Php curl 设置 Proxy</title>
-      <link>http://blog.dadajun.com/4/102/</link>
+      <link>/4/102/</link>
       <pubDate>Thu, 13 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/4/102/</guid>
+      <guid>/4/102/</guid>
       <description>&lt;p&gt;业务需要， 经常要去google 采集一些图片。 同一个ip经常被封。 所以配置百来个代理ip用来随机。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;?php
@@ -58,10 +73,10 @@ echo $result;
     
     <item>
       <title>wordpress xmlrpc</title>
-      <link>http://blog.dadajun.com/2/101/</link>
+      <link>/2/101/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/2/101/</guid>
+      <guid>/2/101/</guid>
       <description>&lt;p&gt;Wordpress xmlrpc 实际上也是用了IXR 类库。wp_xmlrpc_server 继承了IXR_Server。 业务逻辑基本上在 wp_xmlrpc_server 上。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;?php
@@ -97,10 +112,10 @@ print_r($r);
     
     <item>
       <title>wordpress 错误日志开启</title>
-      <link>http://blog.dadajun.com/1/100/</link>
+      <link>/1/100/</link>
       <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/1/100/</guid>
+      <guid>/1/100/</guid>
       <description>&lt;pre&gt;&lt;code&gt;
 &amp;lt;?php
 
@@ -115,10 +130,10 @@ define(&#39;WP_DEBUG_LOG&#39;, true);
     
     <item>
       <title>更简单的多维数组转码方式</title>
-      <link>http://blog.dadajun.com/3/98/</link>
+      <link>/3/98/</link>
       <pubDate>Wed, 29 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/3/98/</guid>
+      <guid>/3/98/</guid>
       <description>&lt;p&gt;最近在开发一个采集工具。数据要保存到csv。要把多维数组的utf8数据转为gbk , 第一反应是用递归去转码。后来想想var_export 可以返回一个变量的字符串 。那样就可以直接转码！&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;?php

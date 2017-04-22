@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Linux服务器批量添加ip</title>
+        <title>DirectAdmin 升级php 版本</title>
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.15" />
@@ -54,32 +54,17 @@
 <div class="container">
     <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
         <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Linux服务器批量添加ip</h1>
+    <h1 class="post-title" itemprop="name headline">DirectAdmin 升级php 版本</h1>
     
 </header>
 
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>由于业务需要， 需要在一台服务器添加100多个ip。简单写了一个shell。然后把它加到rc.local。这样机器重启也可以生效。</p>
+    <pre><code>
 
-<pre><code>
-#!/bin/sh
-DEVICE_PREFIX=ens33
-IP_FILE=/root/ips.txt
-IP_LENGTH=`cat $IP_FILE | wc -l`
-MASK=255.255.255.0
-for i in `seq $IP_LENGTH`
-do
-    DEVICE_NAME=$DEVICE_PREFIX&quot;:&quot;$i
-    IP_ADDRESS=`sed -n ${i}&quot;p&quot; $IP_FILE`
-    if [ -z &quot;$IP_ADDRESS&quot; ];then
-        continue
-    fi
-    ifconfig $DEVICE_NAME $IP_ADDRESS netmask $MASK up
-done
+cd /usr/local/directadmin/custombuild &amp;&amp; ./build set php5_ver 5.5 &amp;&amp; ./build update &amp;&amp; ./build php n
 
-#/etc/rc.local
 
 </code></pre>
 
@@ -90,25 +75,25 @@ done
         <p class="post-tags">
             <span>Tagged:</span>
             
-                 <a href="/tags/shell/">shell</a>
+                 <a href="/tags/php/">php</a>
             
         </p>
     
 
     <div class="share">
-        <a class="icon-twitter" href="http://twitter.com/share?text=Linux%e6%9c%8d%e5%8a%a1%e5%99%a8%e6%89%b9%e9%87%8f%e6%b7%bb%e5%8a%a0ip&url=%2f1%2f99%2f"
+        <a class="icon-twitter" href="http://twitter.com/share?text=DirectAdmin%20%e5%8d%87%e7%ba%a7php%20%e7%89%88%e6%9c%ac&url=%2f6%2f105%2f"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
             <i class="fa fa-twitter"></i>
             <span class="hidden">Twitter</span>
         </a>
 
-        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f1%2f99%2f"
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f6%2f105%2f"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
             <i class="fa fa-facebook"></i>
             <span class="hidden">Facebook</span>
         </a>
 
-        <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f1%2f99%2f"
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f6%2f105%2f"
            onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
            <i class="fa fa-google-plus"></i>
             <span class="hidden">Google+</span>

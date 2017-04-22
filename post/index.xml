@@ -2,19 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Jeff</title>
-    <link>http://blog.dadajun.com/post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on Jeff</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 22 Apr 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.dadajun.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>DirectAdmin 升级php 版本</title>
+      <link>/6/105/</link>
+      <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/6/105/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;
+
+cd /usr/local/directadmin/custombuild &amp;amp;&amp;amp; ./build set php5_ver 5.5 &amp;amp;&amp;amp; ./build update &amp;amp;&amp;amp; ./build php n
+
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Phpstorm 常用快捷键</title>
-      <link>http://blog.dadajun.com/6/phpstorm/</link>
+      <link>/6/phpstorm/</link>
       <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/6/phpstorm/</guid>
+      <guid>/6/phpstorm/</guid>
       <description>
 
 &lt;h3 id=&#34;跳转行:a8f04218514140799b2bb2d18c27bdb2&#34;&gt;跳转行&lt;/h3&gt;
@@ -51,10 +66,10 @@ ctrl+shift+r&lt;/p&gt;
     
     <item>
       <title>WooCommerce 设置每页产品数量</title>
-      <link>http://blog.dadajun.com/1/103/</link>
+      <link>/1/103/</link>
       <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/1/103/</guid>
+      <guid>/1/103/</guid>
       <description>&lt;pre&gt;&lt;code&gt;&amp;lt;?php
 
 // Display 12 products per page.
@@ -69,10 +84,10 @@ add_filter( &#39;loop_shop_per_page&#39;, function($cols){
     
     <item>
       <title>Wordpress 添加和移除 css, js</title>
-      <link>http://blog.dadajun.com/1/104/</link>
+      <link>/1/104/</link>
       <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/1/104/</guid>
+      <guid>/1/104/</guid>
       <description>&lt;pre&gt;&lt;code&gt;&amp;lt;?php
 
 add_action(&#39;wp_enqueue_scripts&#39;, function () {
@@ -91,10 +106,10 @@ add_action(&#39;wp_enqueue_scripts&#39;, function () {
     
     <item>
       <title>Php curl 设置 Proxy</title>
-      <link>http://blog.dadajun.com/4/102/</link>
+      <link>/4/102/</link>
       <pubDate>Thu, 13 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/4/102/</guid>
+      <guid>/4/102/</guid>
       <description>&lt;p&gt;业务需要， 经常要去google 采集一些图片。 同一个ip经常被封。 所以配置百来个代理ip用来随机。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;?php
@@ -138,10 +153,10 @@ echo $result;
     
     <item>
       <title>wordpress xmlrpc</title>
-      <link>http://blog.dadajun.com/2/101/</link>
+      <link>/2/101/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/2/101/</guid>
+      <guid>/2/101/</guid>
       <description>&lt;p&gt;Wordpress xmlrpc 实际上也是用了IXR 类库。wp_xmlrpc_server 继承了IXR_Server。 业务逻辑基本上在 wp_xmlrpc_server 上。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;?php
@@ -177,10 +192,10 @@ print_r($r);
     
     <item>
       <title>wordpress 错误日志开启</title>
-      <link>http://blog.dadajun.com/1/100/</link>
+      <link>/1/100/</link>
       <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/1/100/</guid>
+      <guid>/1/100/</guid>
       <description>&lt;pre&gt;&lt;code&gt;
 &amp;lt;?php
 
@@ -195,10 +210,10 @@ define(&#39;WP_DEBUG_LOG&#39;, true);
     
     <item>
       <title>更简单的多维数组转码方式</title>
-      <link>http://blog.dadajun.com/3/98/</link>
+      <link>/3/98/</link>
       <pubDate>Wed, 29 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/3/98/</guid>
+      <guid>/3/98/</guid>
       <description>&lt;p&gt;最近在开发一个采集工具。数据要保存到csv。要把多维数组的utf8数据转为gbk , 第一反应是用递归去转码。后来想想var_export 可以返回一个变量的字符串 。那样就可以直接转码！&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;?php
@@ -227,10 +242,10 @@ class Csv {
     
     <item>
       <title>Linux服务器批量添加ip</title>
-      <link>http://blog.dadajun.com/1/99/</link>
+      <link>/1/99/</link>
       <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/1/99/</guid>
+      <guid>/1/99/</guid>
       <description>&lt;p&gt;由于业务需要， 需要在一台服务器添加100多个ip。简单写了一个shell。然后把它加到rc.local。这样机器重启也可以生效。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;
@@ -257,10 +272,10 @@ done
     
     <item>
       <title>去除文件bom头</title>
-      <link>http://blog.dadajun.com/4/77/</link>
+      <link>/4/77/</link>
       <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/4/77/</guid>
+      <guid>/4/77/</guid>
       <description>&lt;pre&gt;&lt;code&gt;#查找bom头文件
 grep -r -I -l $&#39;^\xEF\xBB\xBF&#39; ./
 
@@ -272,10 +287,10 @@ find . -type f -exec sed -i &#39;s/\xEF\xBB\xBF//&#39; {} \;
     
     <item>
       <title>Linux 常用信号</title>
-      <link>http://blog.dadajun.com/2/15/</link>
+      <link>/2/15/</link>
       <pubDate>Tue, 10 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/2/15/</guid>
+      <guid>/2/15/</guid>
       <description>&lt;pre&gt;&lt;code&gt;# 查看信号列表
 kill -l
 
@@ -290,10 +305,10 @@ SIGKILL == 9 == kill -9 pid #强制进程终止
     
     <item>
       <title>Linux 冷门但是很酷的命令</title>
-      <link>http://blog.dadajun.com/4/18/</link>
+      <link>/4/18/</link>
       <pubDate>Thu, 15 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/4/18/</guid>
+      <guid>/4/18/</guid>
       <description>&lt;pre&gt;&lt;code&gt;alt + . 获取上一条命令的最后一个参数
 alt + 退格 删除最后一个单词
 Ctrl + R 搜索命令历史
@@ -305,10 +320,10 @@ Ctrl + R 搜索命令历史
     
     <item>
       <title>vim 常用快捷键</title>
-      <link>http://blog.dadajun.com/2/vim/</link>
+      <link>/2/vim/</link>
       <pubDate>Tue, 10 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.dadajun.com/2/vim/</guid>
+      <guid>/2/vim/</guid>
       <description>
 
 &lt;h3 id=&#34;jsbeautify:06a5fa759d42479fba23ece5dc900b51&#34;&gt;Jsbeautify&lt;/h3&gt;
