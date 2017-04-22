@@ -6,8 +6,48 @@
     <description>Recent content in Posts on Jeff</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Apr 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.dadajun.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Phpstorm 常用快捷键</title>
+      <link>http://blog.dadajun.com/6/phpstorm/</link>
+      <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.dadajun.com/6/phpstorm/</guid>
+      <description>
+
+&lt;h3 id=&#34;跳转行:a8f04218514140799b2bb2d18c27bdb2&#34;&gt;跳转行&lt;/h3&gt;
+
+&lt;p&gt;ctrl+G&lt;/p&gt;
+
+&lt;h3 id=&#34;复制行:a8f04218514140799b2bb2d18c27bdb2&#34;&gt;复制行&lt;/h3&gt;
+
+&lt;p&gt;ctrl+D&lt;/p&gt;
+
+&lt;h3 id=&#34;查找:a8f04218514140799b2bb2d18c27bdb2&#34;&gt;查找&lt;/h3&gt;
+
+&lt;p&gt;ctrl+f&lt;br /&gt;
+ctrl+shift+f&lt;/p&gt;
+
+&lt;h3 id=&#34;替换:a8f04218514140799b2bb2d18c27bdb2&#34;&gt;替换&lt;/h3&gt;
+
+&lt;p&gt;ctrl+r&lt;br /&gt;
+ctrl+shift+r&lt;/p&gt;
+
+&lt;h3 id=&#34;选中代码:a8f04218514140799b2bb2d18c27bdb2&#34;&gt;选中代码&lt;/h3&gt;
+
+&lt;p&gt;ctrl+w&lt;/p&gt;
+
+&lt;h3 id=&#34;大小写转换:a8f04218514140799b2bb2d18c27bdb2&#34;&gt;大小写转换&lt;/h3&gt;
+
+&lt;p&gt;Ctrl+Shift+U&lt;/p&gt;
+
+&lt;h3 id=&#34;前进后退:a8f04218514140799b2bb2d18c27bdb2&#34;&gt;前进后退&lt;/h3&gt;
+
+&lt;p&gt;ctrl+alt+ ← →&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>WooCommerce 设置每页产品数量</title>
