@@ -6,8 +6,25 @@
     <description>Recent content in Linux on Jeff</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Jun 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Apr 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CentOS6 代码补全</title>
+      <link>/4/106/</link>
+      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/4/106/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;
+wget http://mirrors.yun-idc.com/epel/6/i386/epel-release-6-8.noarch.rpm
+rpm -ivh epel-release-6-8.noarch.rpm
+yum clean all
+yum makecache
+yum install -y bash-completion
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Linux 常用信号</title>
