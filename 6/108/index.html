@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Phpstorm 常用快捷键</title>
+        <title>iframe 高度自适应</title>
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.15" />
@@ -54,73 +54,38 @@
 <div class="container">
     <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
         <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Phpstorm 常用快捷键</h1>
+    <h1 class="post-title" itemprop="name headline">iframe 高度自适应</h1>
     
 </header>
 
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    
+    <p>最近在开发网站的在线定制Tshirt 功能，涉及到iframe 高度自适应 , iframe 不经常用 ， 这边备忘一下</p>
 
-<h3 id="跳转行:a8f04218514140799b2bb2d18c27bdb2">跳转行</h3>
+<pre><code>
+&lt;div class=&quot;custom-container&quot;&gt;
+    &lt;iframe src=&quot;&lt;?php echo $url; ?&gt;&quot; width=&quot;100%&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; id=&quot;custom-iframe&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
 
-<p>ctrl+g</p>
+&lt;script&gt;
+    (function () {
 
-<h3 id="复制行:a8f04218514140799b2bb2d18c27bdb2">复制行</h3>
+        function setIframeHeight(iframe) {
+            var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+            if (iframeWin.document.body) {
+                iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+            }
+        };
 
-<p>ctrl+d</p>
+        window.onload = function () {
+            var iframe = document.getElementById('custom-iframe');
+            setIframeHeight(iframe);
+        };
 
-<h3 id="删除行:a8f04218514140799b2bb2d18c27bdb2">删除行</h3>
-
-<p>ctrl+y</p>
-
-<h3 id="查找:a8f04218514140799b2bb2d18c27bdb2">查找</h3>
-
-<p>ctrl+f<br />
-ctrl+shift+f</p>
-
-<h3 id="替换:a8f04218514140799b2bb2d18c27bdb2">替换</h3>
-
-<p>ctrl+r<br />
-ctrl+shift+r</p>
-
-<h3 id="选中代码:a8f04218514140799b2bb2d18c27bdb2">选中代码</h3>
-
-<p>ctrl+w</p>
-
-<h3 id="大小写转换:a8f04218514140799b2bb2d18c27bdb2">大小写转换</h3>
-
-<p>Ctrl+Shift+u</p>
-
-<h3 id="前进后退:a8f04218514140799b2bb2d18c27bdb2">前进后退</h3>
-
-<p>ctrl+alt+ ← →</p>
-
-<h3 id="列出最后打开的文件:a8f04218514140799b2bb2d18c27bdb2">列出最后打开的文件</h3>
-
-<p>ctrl+e</p>
-
-<h3 id="常用的代码片段:a8f04218514140799b2bb2d18c27bdb2">常用的代码片段</h3>
-
-<p>ctrl+j</p>
-
-<h3 id="选择要粘贴的内容:a8f04218514140799b2bb2d18c27bdb2">选择要粘贴的内容</h3>
-
-<p>ctrl+shirt+v</p>
-
-<h3 id="列操作:a8f04218514140799b2bb2d18c27bdb2">列操作</h3>
-
-<p>Alt + 鼠标左键（点选、划选）</p>
-
-<h3 id="软回车:a8f04218514140799b2bb2d18c27bdb2">软回车</h3>
-
-<p>shirt+enter</p>
-
-<h3 id="xdebug:a8f04218514140799b2bb2d18c27bdb2">xdebug</h3>
-
-<p>F8 按行执行<br />
-F9 下一个断点</p>
+    })();
+&lt;/script&gt;
+</code></pre>
 
 </div>
 
@@ -129,25 +94,25 @@ F9 下一个断点</p>
         <p class="post-tags">
             <span>Tagged:</span>
             
-                 <a href="/tags/phpstorm/">phpstorm</a>
+                 <a href="/tags/asp/">asp</a>
             
         </p>
     
 
     <div class="share">
-        <a class="icon-twitter" href="http://twitter.com/share?text=Phpstorm%20%e5%b8%b8%e7%94%a8%e5%bf%ab%e6%8d%b7%e9%94%ae&url=%2f6%2fphpstorm%2f"
+        <a class="icon-twitter" href="http://twitter.com/share?text=iframe%20%e9%ab%98%e5%ba%a6%e8%87%aa%e9%80%82%e5%ba%94&url=%2f6%2f108%2f"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
             <i class="fa fa-twitter"></i>
             <span class="hidden">Twitter</span>
         </a>
 
-        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f6%2fphpstorm%2f"
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f6%2f108%2f"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
             <i class="fa fa-facebook"></i>
             <span class="hidden">Facebook</span>
         </a>
 
-        <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f6%2fphpstorm%2f"
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f6%2f108%2f"
            onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
            <i class="fa fa-google-plus"></i>
             <span class="hidden">Google+</span>
