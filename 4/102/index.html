@@ -78,6 +78,7 @@ function get_proxy_info($filename) {
 $url = 'http://ipinfo.io/';
 $proxy = get_proxy_info('ip.txt');
 list($ip, $port, $userpwd,) = $proxy;
+$userpwd = trim($userpwd);
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
@@ -87,11 +88,10 @@ curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 
-curl_setopt($ch, CURLOPT_PROXYAUTH, CURLAUTH_BASIC);
-curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_HTTP);
+curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);
 curl_setopt($ch, CURLOPT_PROXY, $ip);
 curl_setopt($ch, CURLOPT_PROXYPORT, $port);
-curl_setopt($ch, CURLOPT_PROXYUSERPWD, trim($userpwd));
+curl_setopt($ch, CURLOPT_PROXYUSERPWD, $userpwd);
 
 $result = curl_exec($ch);
 curl_close($ch);
