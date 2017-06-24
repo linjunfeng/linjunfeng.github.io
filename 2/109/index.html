@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>js 二进制, 十进制转换</title>
+        <title>js 编码转换</title>
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.15" />
@@ -54,21 +54,28 @@
 <div class="container">
     <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
         <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">js 二进制, 十进制转换</h1>
+    <h1 class="post-title" itemprop="name headline">js 编码转换</h1>
     
 </header>
 
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <pre><code>//10=&gt;2
+    <pre><code>//十进制转二进制
 var a = 240;
-var b = a.toString(2);
-console.log(b);
+a.toString(2);//11110000
 
-//2=&gt;10
-var c = parseInt(b, 2);
-console.log(c);
+//二进制转十进制
+parseInt(&quot;11110000&quot;, 2);//240
+
+
+
+//获取字符的Unicode 编码
+&quot;a&quot;.charCodeAt(0);//97
+
+//获取Unicode字符值 对应的字符
+String.fromCharCode(97);//a
+
 </code></pre>
 
 </div>
@@ -84,7 +91,7 @@ console.log(c);
     
 
     <div class="share">
-        <a class="icon-twitter" href="http://twitter.com/share?text=js%20%e4%ba%8c%e8%bf%9b%e5%88%b6%2c%20%e5%8d%81%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2&url=%2f2%2f109%2f"
+        <a class="icon-twitter" href="http://twitter.com/share?text=js%20%e7%bc%96%e7%a0%81%e8%bd%ac%e6%8d%a2&url=%2f2%2f109%2f"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
             <i class="fa fa-twitter"></i>
             <span class="hidden">Twitter</span>
