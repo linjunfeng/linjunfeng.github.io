@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>zencart 数据清空</title>
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.15" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/monokai-sublime.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <a class="site-logo" href="/">
+                                <img src="/images/avatar.jpg" />
+                            </a>
+                        
+
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/page/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">zencart 数据清空</h1>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <pre><code>
+TRUNCATE TABLE categories;
+TRUNCATE TABLE categories_description;
+TRUNCATE TABLE media_clips;
+TRUNCATE TABLE media_manager;
+TRUNCATE TABLE media_to_products;
+TRUNCATE TABLE media_types;
+TRUNCATE TABLE music_genre;
+TRUNCATE TABLE product_music_extra;
+TRUNCATE TABLE product_types_to_category;
+TRUNCATE TABLE products;
+TRUNCATE TABLE products_attributes;
+TRUNCATE TABLE products_attributes_download;
+TRUNCATE TABLE products_description;
+TRUNCATE TABLE products_discount_quantity;
+TRUNCATE TABLE products_notifications;
+TRUNCATE TABLE products_options;
+TRUNCATE TABLE products_options_values;
+TRUNCATE TABLE products_options_values_to_products_options;
+TRUNCATE TABLE products_to_categories;
+TRUNCATE TABLE record_artists;
+TRUNCATE TABLE record_artists_info;
+TRUNCATE TABLE record_company;
+TRUNCATE TABLE record_company_info;
+TRUNCATE TABLE featured;
+TRUNCATE TABLE salemaker_sales;
+TRUNCATE TABLE specials;
+TRUNCATE TABLE group_pricing;
+TRUNCATE TABLE manufacturers;
+TRUNCATE TABLE manufacturers_info;
+TRUNCATE TABLE reviews;
+TRUNCATE TABLE reviews_description;
+
+# orders
+TRUNCATE TABLE orders;
+TRUNCATE TABLE orders_products;
+TRUNCATE TABLE orders_products_attributes;
+TRUNCATE TABLE orders_products_download;
+TRUNCATE TABLE orders_total;
+TRUNCATE TABLE orders_status_history;
+
+### customers
+TRUNCATE TABLE customers;
+TRUNCATE TABLE customers_info;
+TRUNCATE TABLE customers_basket_attributes;
+TRUNCATE TABLE customers_basket;
+TRUNCATE TABLE address_book;
+
+alter table customers AUTO_INCREMENT=9777;
+alter table orders AUTO_INCREMENT=18888;
+</code></pre>
+
+<pre><code>
+UPDATE `configuration` SET `configuration_value` = '' WHERE `configuration_key` = 'STORE_NAME';
+UPDATE `configuration` SET `configuration_value` = '' WHERE `configuration_key` = 'STORE_OWNER';
+
+# email
+UPDATE `admin` SET `admin_email` = 'demo@gmail.com' WHERE `admin_name` = 'admin';
+UPDATE `configuration` SET `configuration_value` = 'demo@gmail.com' WHERE `configuration_key` = 'STORE_OWNER_EMAIL_ADDRESS';
+UPDATE `configuration` SET `configuration_value` = 'demo@gmail.com' WHERE `configuration_key` = 'EMAIL_FROM';
+UPDATE `configuration` SET `configuration_value` = 'demo@gmail.com' WHERE `configuration_key` = 'SEND_EXTRA_ORDER_EMAILS_TO';
+UPDATE `configuration` SET `configuration_value` = 'demo@gmail.com' WHERE `configuration_key` = 'SEND_EXTRA_CREATE_ACCOUNT_EMAILS_TO';
+UPDATE `configuration` SET `configuration_value` = 'demo@gmail.com' WHERE `configuration_key` = 'SEND_EXTRA_GV_CUSTOMER_EMAILS_TO';
+UPDATE `configuration` SET `configuration_value` = 'demo@gmail.com' WHERE `configuration_key` = 'SEND_EXTRA_GV_ADMIN_EMAILS_TO';
+UPDATE `configuration` SET `configuration_value` = 'demo@gmail.com' WHERE `configuration_key` = 'SEND_EXTRA_DISCOUNT_COUPON_ADMIN_EMAILS_TO';
+UPDATE `configuration` SET `configuration_value` = 'demo@gmail.com' WHERE `configuration_key` = 'SEND_EXTRA_ORDERS_STATUS_ADMIN_EMAILS_TO';
+UPDATE `configuration` SET `configuration_value` = 'demo@gmail.com' WHERE `configuration_key` = 'SEND_EXTRA_REVIEW_NOTIFICATION_EMAILS_TO';
+UPDATE `configuration` SET `configuration_value` = 'demo@gmail.com' WHERE `configuration_key` = 'SEND_EXTRA_LOW_STOCK_EMAILS_TO';
+
+UPDATE `configuration` SET `configuration_value` = 'demo@gmail.com' WHERE `configuration_key` = 'EMAIL_SMTPAUTH_MAILBOX';
+UPDATE `configuration` SET `configuration_value` = 'password' WHERE `configuration_key` = 'EMAIL_SMTPAUTH_PASSWORD';
+UPDATE `configuration` SET `configuration_value` = 'smtp.gmail.com' WHERE `configuration_key` = 'EMAIL_SMTPAUTH_MAIL_SERVER';
+UPDATE `configuration` SET `configuration_value` = '465' WHERE `configuration_key` = 'EMAIL_SMTPAUTH_MAIL_SERVER_PORT';
+
+UPDATE `configuration` SET `configuration_value` = 'HTML' WHERE `configuration_key` = 'ADMIN_EXTRA_EMAIL_FORMAT';
+UPDATE `configuration` SET `configuration_value` = 'true' WHERE `configuration_key` = 'EMAIL_USE_HTML';
+UPDATE `configuration` SET `configuration_value` = '1' WHERE `configuration_key` = 'ACCOUNT_EMAIL_PREFERENCE';
+
+UPDATE `configuration` SET `configuration_value` = 'smtpauth' WHERE `configuration_key` = 'EMAIL_TRANSPORT';
+
+UPDATE `configuration` SET `configuration_value` = '73' WHERE `configuration_key` = 'SHOW_CREATE_ACCOUNT_DEFAULT_COUNTRY';
+</code></pre>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=zencart%20%e6%95%b0%e6%8d%ae%e6%b8%85%e7%a9%ba&url=%2f5%2f1001%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f5%2f1001%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f5%2f1001%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+
