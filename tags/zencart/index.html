@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>WooCommerce 产品图片优化思路</title>
+        <title>Zencart</title>
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.15" />
@@ -51,64 +51,39 @@
             <div id="container">
 
 
-<div class="container">
-    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
-        <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">WooCommerce 产品图片优化思路</h1>
+<div id="post-index" class="container">
     
-</header>
+    <header class="post-header">
+        <h1 class="post-title"></h1>
+        <p></p>
+    </header>
 
-        <div class="post-content clearfix" itemprop="articleBody">
-    
 
-    <p>1.wordpress 在处理图片的时候会生成很多不同尺寸的图片（基本上没用到），而一个产品好几张图片， 就要生成几十的图片。</p>
-
-<pre><code>&lt;?php
-
-add_filter('intermediate_image_sizes_advanced', function () {
-    return false;
-}, 100);
-
-</code></pre>
-
-<p>2.在处理图片的时候， 图片也是一条 post 记录 类型为attachment， 这样表记录增加了好几倍。但很多情况下产品图片仅仅是原来展示的， 明显没必要。
-于是我就打算弃用 wordpress 默认图片字段。 改用自定义字段定义图片规则， 再获取图片的时候通过钩子来hack。</p>
-
-</div>
-
-        <footer class="post-footer clearfix">
-    
-        <p class="post-tags">
-            <span>Tagged:</span>
-            
-                 <a href="/tags/wordpress/">wordpress</a>
-            
-        </p>
-    
-
-    <div class="share">
-        <a class="icon-twitter" href="http://twitter.com/share?text=WooCommerce%20%e4%ba%a7%e5%93%81%e5%9b%be%e7%89%87%e4%bc%98%e5%8c%96%e6%80%9d%e8%b7%af&url=%2f2%2f97%2f"
-            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-            <i class="fa fa-twitter"></i>
-            <span class="hidden">Twitter</span>
-        </a>
-
-        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f2%2f97%2f"
-            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-            <i class="fa fa-facebook"></i>
-            <span class="hidden">Facebook</span>
-        </a>
-
-        <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f2%2f97%2f"
-           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-           <i class="fa fa-google-plus"></i>
-            <span class="hidden">Google+</span>
-        </a>
-    </div>
-</footer>
-
+    <ol class="post-list">
         
-    </article>
+        
+            <li class="post-stub">
+    <a href="/5/1001/">
+        <h4 class="post-stub-title">zencart 数据清空</h4>
+        
+        
+    </a>
+</li>
+        
+            <li class="post-stub">
+    <a href="/5/1000/">
+        <h4 class="post-stub-title">zencart 后台升级检测关掉</h4>
+        
+        
+    </a>
+</li>
+        
+    </ol>
+
+    <div class="post-navigation">
+        
+
+    </div>
 </div>
 
             </div>
@@ -130,4 +105,3 @@ add_filter('intermediate_image_sizes_advanced', function () {
         <script src="/js/scripts.js"></script>
     </body>
 </html>
-
