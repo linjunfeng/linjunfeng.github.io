@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Posts</title>
+        <title>Apache http 跳到 https, 非www 跳 www</title>
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.15" />
@@ -51,63 +51,60 @@
             <div id="container">
 
 
-<div id="post-index" class="container">
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Apache http 跳到 https, 非www 跳 www</h1>
     
-    <header class="post-header">
-        <h1 class="post-title"></h1>
-        <p></p>
-    </header>
+</header>
 
+        <div class="post-content clearfix" itemprop="articleBody">
+    
 
-    <ol class="post-list">
-        
-        
-            <li class="post-stub">
-    <a href="/4/77/">
-        <h4 class="post-stub-title">去除文件bom头</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="/2/15/">
-        <h4 class="post-stub-title">Linux 常用信号</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="/4/18/">
-        <h4 class="post-stub-title">Linux 冷门但是很酷的命令</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="/2/vim/">
-        <h4 class="post-stub-title">vim 常用快捷键</h4>
-        
-        
-    </a>
-</li>
-        
-    </ol>
+    <pre><code>#.htaccess
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R,L,NE]
 
-    <div class="post-navigation">
-        
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} !^$
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R,L,NE]
+</code></pre>
 
-    <nav class="pagination" role="navigation">
-        <span class="page-number">Page 3 of 3</span>
-        
-            <a class="newer-posts" href="/post/page/2/">&larr; Newer Posts</a>
-        
-        
-    </nav>
+</div>
 
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+                 <a href="/tags/apache/">apache</a>
+            
+        </p>
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=Apache%20http%20%e8%b7%b3%e5%88%b0%20https%2c%20%e9%9d%9ewww%20%e8%b7%b3%20www&url=%2f1%2f1004%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f1%2f1004%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f1%2f1004%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
     </div>
+</footer>
+
+        
+    </article>
 </div>
 
             </div>
@@ -129,3 +126,4 @@
         <script src="/js/scripts.js"></script>
     </body>
 </html>
+

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>apache rewrite</title>
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.15" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/monokai-sublime.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <a class="site-logo" href="/">
+                                <img src="/images/avatar.jpg" />
+                            </a>
+                        
+
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/page/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">apache rewrite</h1>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<h3 id="关于mod-rewrite:b46eb01d99b4f6a5298aff86bbebb9cf">关于mod_rewrite (!)</h3>
+
+<p>In mod_rewrite, the NOT character (&lsquo;!&rsquo;) is also available as a possible pattern prefix. This enables you to negate a pattern; to say, for instance: ``if the current URL does NOT match this pattern&rdquo;. This can be used for exceptional cases, where it is easier to match the negative pattern, or as a last default rule.</p>
+
+<h3 id="uri-不同位置:b46eb01d99b4f6a5298aff86bbebb9cf">uri 不同位置</h3>
+
+<p>When using RewriteRule in .htaccess files, be aware that the per-directory context changes things a bit. In particular, rules are taken to be relative to the current directory, rather than being the original requested URI. Consider the following examples:</p>
+
+<pre><code># In httpd.conf
+RewriteRule &quot;^/images/(.+)\.jpg&quot; &quot;/images/$1.png&quot;
+
+# In .htaccess in root dir
+RewriteRule &quot;^images/(.+)\.jpg&quot; &quot;images/$1.png&quot;
+
+# In .htaccess in images/
+RewriteRule &quot;^(.+)\.jpg&quot; &quot;$1.png&quot;
+</code></pre>
+
+<pre><code>[C] 链接下一条规则
+[L] 停止重写 last
+[NE] 不对特殊字符转移
+[NC] 不区分大小写
+[G] 网页已经失效  410状态码
+[QSA] //相当于把$args附加到新的url
+</code></pre>
+
+<h3 id="rewritecond:b46eb01d99b4f6a5298aff86bbebb9cf">rewriteCond</h3>
+
+<p>先匹配 RewriteRule， 再进行RewriteCond , 在RewriteCond 可以调用 $1-9</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+                 <a href="/tags/apache/">apache</a>
+            
+        </p>
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=apache%20rewrite&url=%2f1%2f1003%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f1%2f1003%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f1%2f1003%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+
