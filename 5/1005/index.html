@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>js 正则总结</title>
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.15" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/monokai-sublime.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <a class="site-logo" href="/">
+                                <img src="/images/avatar.jpg" />
+                            </a>
+                        
+
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Home" href="/">Home</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/page/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">js 正则总结</h1>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<h2 id="string-对象:eacc5d4b96a033590596e644978b181a">String 对象</h2>
+
+<h3 id="search-起始位置-不存在返回-1:eacc5d4b96a033590596e644978b181a">search 起始位置，不存在返回-1</h3>
+
+<pre><code>&quot;1234abc&quot;.search(/abc/);//4
+&quot;1234abc&quot;.search(/abcd/);//-1
+</code></pre>
+
+<h3 id="replace-替换:eacc5d4b96a033590596e644978b181a">replace 替换</h3>
+
+<pre><code>&quot;hello, world&quot;.replace(/world/i, &quot;php&quot;);//hello, php
+</code></pre>
+
+<h3 id="match-匹配:eacc5d4b96a033590596e644978b181a">match 匹配</h3>
+
+<pre><code>&quot;1,2,3&quot;.match(/\d+/);//返回也是数组,a[0]就是匹配的结果,依次子表达式的结果
+&quot;1,2,3&quot;.match(/\d+/g);//[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]
+</code></pre>
+
+<h2 id="regexp-对象:eacc5d4b96a033590596e644978b181a">RegExp 对象</h2>
+
+<h3 id="test:eacc5d4b96a033590596e644978b181a">test</h3>
+
+<pre><code>/world/.test(&quot;hello, world&quot;);//true
+
+</code></pre>
+
+<h3 id="exec:eacc5d4b96a033590596e644978b181a">exec</h3>
+
+<pre><code>//exec 和 test 一样。 只是有返回结果， 结果跟 String.match 一样
+/world/.exec(&quot;hello, world&quot;);
+</code></pre>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+                 <a href="/tags/js/">js</a>
+            
+        </p>
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=js%20%e6%ad%a3%e5%88%99%e6%80%bb%e7%bb%93&url=%2f5%2f1005%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f5%2f1005%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f5%2f1005%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+
