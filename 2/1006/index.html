@@ -73,6 +73,12 @@ session.gc_maxlifetime 表示多少秒后数据为垃圾数据.
 <pre><code>define('SESSION_TIMEOUT_CATALOG', 12000000);
 </code></pre>
 
+<p>zencart 后台强制最长只能900s。如果要修改长一点, 则要修改sessions.php文件</p>
+
+<pre><code>1. 修改后台的$SESS_LIFE 时长
+2. 修改zen_session_start 中的gc_maxlifetime
+</code></pre>
+
 </div>
 
         <footer class="post-footer clearfix">
