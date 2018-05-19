@@ -94,7 +94,7 @@ TRUNCATE TABLE manufacturers_info;
 TRUNCATE TABLE reviews;
 TRUNCATE TABLE reviews_description;
 
-# orders
+### orders
 TRUNCATE TABLE orders;
 TRUNCATE TABLE orders_products;
 TRUNCATE TABLE orders_products_attributes;
@@ -108,6 +108,15 @@ TRUNCATE TABLE customers_info;
 TRUNCATE TABLE customers_basket_attributes;
 TRUNCATE TABLE customers_basket;
 TRUNCATE TABLE address_book;
+
+
+### others
+TRUNCATE TABLE counter;
+TRUNCATE TABLE counter_history;
+TRUNCATE TABLE admin_activity_log;
+TRUNCATE TABLE sessions;
+TRUNCATE TABLE whos_online;
+
 
 alter table customers AUTO_INCREMENT=9777;
 alter table orders AUTO_INCREMENT=18888;
