@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Posts</title>
+        <title>zencart 后台增加配置</title>
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.15" />
@@ -51,111 +51,50 @@
             <div id="container">
 
 
-<div id="post-index" class="container">
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">zencart 后台增加配置</h1>
     
-    <header class="post-header">
-        <h1 class="post-title"></h1>
-        <p></p>
-    </header>
+</header>
 
+        <div class="post-content clearfix" itemprop="articleBody">
+    
 
-    <ol class="post-list">
-        
-        
-            <li class="post-stub">
-    <a href="/1/1010/">
-        <h4 class="post-stub-title">zencart 后台增加配置</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="/6/ssl/">
-        <h4 class="post-stub-title">ssl 中公钥、私钥、证书后缀名</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="/3/1009/">
-        <h4 class="post-stub-title">bind 错误定位</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="/1/1008/">
-        <h4 class="post-stub-title">Zencart 错误报告</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="/1/1007/">
-        <h4 class="post-stub-title">汉字的正则表达式</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="/2/1006/">
-        <h4 class="post-stub-title">php session 垃圾回收机制</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="/5/1005/">
-        <h4 class="post-stub-title">js 正则总结</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="/1/1004/">
-        <h4 class="post-stub-title">Apache http 跳到 https, 非www 跳 www</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="/1/1003/">
-        <h4 class="post-stub-title">apache rewrite</h4>
-        
-        
-    </a>
-</li>
-        
-            <li class="post-stub">
-    <a href="/4/1002/">
-        <h4 class="post-stub-title">查看jQuery版本</h4>
-        
-        
-    </a>
-</li>
-        
-    </ol>
+    <pre><code>DELETE FROM `configuration` WHERE  `configuration_key` LIKE 'HZ\_%';
 
-    <div class="post-navigation">
-        
+INSERT INTO `configuration` VALUES (NULL, 'Demo title', 'HZ_DEMO_KEY', '', '', '1', '9999', NULL, now(), NULL, NULL);
 
-    <nav class="pagination" role="navigation">
-        <span class="page-number">Page 1 of 4</span>
-        
-        
-            <a class="older-posts" href="/post/page/2/">Older Posts &rarr;</a>
-        
-    </nav>
+</code></pre>
 
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=zencart%20%e5%90%8e%e5%8f%b0%e5%a2%9e%e5%8a%a0%e9%85%8d%e7%bd%ae&url=%2f1%2f1010%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f1%2f1010%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f1%2f1010%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
     </div>
+</footer>
+
+        
+    </article>
 </div>
 
             </div>
@@ -177,3 +116,4 @@
         <script src="/js/scripts.js"></script>
     </body>
 </html>
+
