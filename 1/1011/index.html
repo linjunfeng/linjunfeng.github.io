@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Jeff</title>
+        <title>Zencart 重置密码 sql</title>
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.15" />
@@ -51,63 +51,48 @@
             <div id="container">
 
 
-<div id="post-index" class="container" itemscope="" itemtype="http://schema.org/Blog">
-    
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
         <header class="post-header">
-            <h1 class="post-title" itemprop="name"></h1>
-            <p></p>
-        </header>
+    <h1 class="post-title" itemprop="name headline">Zencart 重置密码 sql</h1>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <ol class="post-list">
-        
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
-    <a href="/4/77/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">去除文件bom头</h4>
-        
-    </a>
-</li>
+    <pre><code>UPDATE admin SET admin_pass = '$2y$10$wPuHurOJMBSMWFZ9l673bO2TtFja6hqaDHN9bwTfEypI6H6r.St1q',pwd_last_change_date = now(),prev_pass1 = '',prev_pass2 = '',prev_pass3 = '',failed_logins = 0,lockout_expires = 0,reset_token = '',last_failed_attempt = '0001-01-01 00:00:00',last_failed_ip = '',last_modified = now() WHERE admin_name = 'admin';
 
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
-    <a href="/2/15/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Linux 常用信号</h4>
-        
-    </a>
-</li>
+</code></pre>
 
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
-    <a href="/4/18/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Linux 快捷键</h4>
-        
-    </a>
-</li>
+</div>
 
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
-    <a href="/2/vim/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">vim 常用快捷键</h4>
-        
-    </a>
-</li>
+        <footer class="post-footer clearfix">
+    
 
-        
-    </ol>
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=Zencart%20%e9%87%8d%e7%bd%ae%e5%af%86%e7%a0%81%20sql&url=%2f1%2f1011%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
 
-    <div class="post-navigation">
-        
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f1%2f1011%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
 
-    <nav class="pagination" role="navigation">
-        <span class="page-number">Page 4 of 4</span>
-        
-            <a class="newer-posts" href="/page/3/">&larr; Newer Posts</a>
-        
-        
-    </nav>
-
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f1%2f1011%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
     </div>
+</footer>
+
+        
+    </article>
 </div>
 
             </div>
@@ -129,3 +114,4 @@
         <script src="/js/scripts.js"></script>
     </body>
 </html>
+

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Jeff</title>
+        <title>MariaDB – “Error in accept: Too many open files”</title>
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.15" />
@@ -51,63 +51,65 @@
             <div id="container">
 
 
-<div id="post-index" class="container" itemscope="" itemtype="http://schema.org/Blog">
-    
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
         <header class="post-header">
-            <h1 class="post-title" itemprop="name"></h1>
-            <p></p>
-        </header>
+    <h1 class="post-title" itemprop="name headline">MariaDB – “Error in accept: Too many open files”</h1>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <ol class="post-list">
-        
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
-    <a href="/4/77/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">去除文件bom头</h4>
-        
-    </a>
-</li>
+    
 
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
-    <a href="/2/15/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Linux 常用信号</h4>
-        
-    </a>
-</li>
+<h3 id="查看max-open-files-限制:9d406d1f672ffed26d2d14c8cb99dd03">查看Max open files 限制</h3>
 
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
-    <a href="/4/18/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Linux 快捷键</h4>
-        
-    </a>
-</li>
+<pre><code>cat /var/run/mariadb/mariadb.pid
+cat /proc/XXXXX/limits
 
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
-    <a href="/2/vim/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">vim 常用快捷键</h4>
-        
-    </a>
-</li>
+</code></pre>
 
-        
-    </ol>
+<h3 id="修改max-open-files-配置-usr-lib-systemd-system-mariadb-service:9d406d1f672ffed26d2d14c8cb99dd03">修改Max open files 配置(/usr/lib/systemd/system/mariadb.service)</h3>
 
-    <div class="post-navigation">
-        
+<pre><code># add this line to  the “[Service]” section
+LimitNOFILE=infinity
+</code></pre>
 
-    <nav class="pagination" role="navigation">
-        <span class="page-number">Page 4 of 4</span>
-        
-            <a class="newer-posts" href="/page/3/">&larr; Newer Posts</a>
-        
-        
-    </nav>
+<h3 id="重启-systemctl-daemon-和-mariadb:9d406d1f672ffed26d2d14c8cb99dd03">重启  systemctl daemon 和 mariadb</h3>
 
+<pre><code>systemctl daemon-reload
+systemctl restart mariadb
+</code></pre>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=MariaDB%20%e2%80%93%20%e2%80%9cError%20in%20accept%3a%20Too%20many%20open%20files%e2%80%9d&url=%2f1%2f1012%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f1%2f1012%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f1%2f1012%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
     </div>
+</footer>
+
+        
+    </article>
 </div>
 
             </div>
@@ -129,3 +131,4 @@
         <script src="/js/scripts.js"></script>
     </body>
 </html>
+

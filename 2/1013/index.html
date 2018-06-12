@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Jeff</title>
+        <title>禁用py2exe 产生的日志</title>
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.15" />
@@ -51,63 +51,51 @@
             <div id="container">
 
 
-<div id="post-index" class="container" itemscope="" itemtype="http://schema.org/Blog">
-    
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
         <header class="post-header">
-            <h1 class="post-title" itemprop="name"></h1>
-            <p></p>
-        </header>
+    <h1 class="post-title" itemprop="name headline">禁用py2exe 产生的日志</h1>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <ol class="post-list">
-        
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
-    <a href="/4/77/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">去除文件bom头</h4>
-        
-    </a>
-</li>
+    <p>直接重写 sys.stderr write 方法</p>
 
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
-    <a href="/2/15/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Linux 常用信号</h4>
-        
-    </a>
-</li>
+<pre><code>#C:\Python27\Lib\site-packages\py2exe\boot_common.py
+def write(self, text, alert=sys._MessageBox, fname=sys.executable + '.log'):
+    pass
+</code></pre>
 
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
-    <a href="/4/18/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">Linux 快捷键</h4>
-        
-    </a>
-</li>
+</div>
 
-        
-            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
-    <a href="/2/vim/" itemprop="url" title="Go to post detail">
-        <h4 class="post-stub-title" itemprop="name">vim 常用快捷键</h4>
-        
-    </a>
-</li>
+        <footer class="post-footer clearfix">
+    
 
-        
-    </ol>
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=%e7%a6%81%e7%94%a8py2exe%20%e4%ba%a7%e7%94%9f%e7%9a%84%e6%97%a5%e5%bf%97&url=%2f2%2f1013%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
 
-    <div class="post-navigation">
-        
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f2%2f1013%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
 
-    <nav class="pagination" role="navigation">
-        <span class="page-number">Page 4 of 4</span>
-        
-            <a class="newer-posts" href="/page/3/">&larr; Newer Posts</a>
-        
-        
-    </nav>
-
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f2%2f1013%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
     </div>
+</footer>
+
+        
+    </article>
 </div>
 
             </div>
@@ -129,3 +117,4 @@
         <script src="/js/scripts.js"></script>
     </body>
 </html>
+
